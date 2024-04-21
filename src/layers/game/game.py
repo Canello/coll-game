@@ -10,7 +10,7 @@ class Game:
     def start() -> None:
         pass
 
-    def notify(event: InputEvent) -> None:
+    def notify(self, event: InputEvent) -> None:
         pass
 
 
