@@ -1,5 +1,7 @@
 from typing import Any, Callable
 
+from keyboard_event import KeyboardEvent
+
 class KeyboardListener:
     def __init__(self) -> None:
         pass

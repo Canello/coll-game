@@ -1,5 +1,7 @@
 from typing import Any, Callable
 
+from .input_event import InputEvent
+
 class InputEventsManager:
     def __init__(self) -> None:
         pass
