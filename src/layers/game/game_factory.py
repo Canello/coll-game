@@ -12,13 +12,13 @@ class GameFactory:
     """
 
     @staticmethod
-    def make_game(player: Player) -> Game:
+    def make_game() -> Game:
         world_builder = WorldBuilder()
         scoreboard = Scoreboard()
         return Game(world_builder, scoreboard)
     
     @staticmethod
-    def make_world() -> World:
+    def make_world(player: Player) -> World:
         world_events_manager = WorldEventsManager()
         collision_handler = CollisionHandler()
         return World(world_events_manager, collision_handler)
