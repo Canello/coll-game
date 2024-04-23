@@ -7,7 +7,7 @@ class Screen:
         pass
 
     @staticmethod
-    def draw_img(filename: str) -> None:
+    def draw_img(filename: str, width: int, height: int) -> None:
         # picks the img with filename in images folder
         # then paints it
         pass

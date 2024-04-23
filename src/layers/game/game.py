@@ -1,17 +1,19 @@
+from ..client.input_event import InputEvent
+from .scoreboard import Scoreboard
+from .world_builder import WorldBuilder
+
 class Game:
     def __init__(
         self,
         world_builder: WorldBuilder,
         scoreboard: Scoreboard
     ) -> None:
-        self.world = world_builder.build()
-        self.scoreboard = scoreboard
+        self._world = world_builder.build()
+        self._scoreboard = scoreboard
+        self._world.add_event_listener("score", self._scoreboard.notify)
 
-    def start() -> None:
+    def start(self) -> None:
         pass
 
     def notify(self, event: InputEvent) -> None:
         pass
-
-
-
