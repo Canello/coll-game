@@ -12,7 +12,7 @@ class WorldBuilder:
         objects = []
 
         # instantiate world
-        world = GameFactory.make_world()
+        world = GameFactory.make_world(player)
 
         # add objects to the world
         for object in objects:

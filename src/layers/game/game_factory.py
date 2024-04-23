@@ -4,6 +4,7 @@ from .world import World
 from .world_events_manager import WorldEventsManager
 from .collision_handler import CollisionHandler
 from .scoreboard import Scoreboard
+from .objects.player import Player
 
 class GameFactory:
     """
@@ -11,7 +12,7 @@ class GameFactory:
     """
 
     @staticmethod
-    def make_game() -> Game:
+    def make_game(player: Player) -> Game:
         world_builder = WorldBuilder()
         scoreboard = Scoreboard()
         return Game(world_builder, scoreboard)
