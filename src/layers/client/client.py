@@ -1,18 +1,19 @@
 from typing import Any, Callable
 import tkinter as tk
 
-from .input_event import InputEvent
-from .input_handler import InputHandler
-
 class Client:
-    def __init__(
-        self,
-        input_handler: InputHandler
-    ) -> None:
-        self._input_handler = input_handler
+    def __init__(self) -> None:
+        self._observers = []
 
-    def add_event_listener(self, notify: Callable[[InputEvent], Any]):
-        self._input_handler.add_event_listener(notify)
+    def add_event_listener(self, notify: Callable[[str], Any]) -> None:
+        self._observers.append(notify)
 
-    def notify(self, event: tk.Event) -> None:
-        self._input_handler.notify(event)
+    def notify(self, event: tk.Event) -> Any:
+        try:
+            self._send_to_all(event.char)
+        except:
+            pass # invalid event
+
+    def _send_to_all(self, char: str) -> None:
+        for notify in self._observers:
+            notify(char)
