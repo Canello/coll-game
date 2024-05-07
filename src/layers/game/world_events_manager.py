@@ -1,13 +1,19 @@
 from typing import Any, Callable
 
 from .world_event import WorldEvent
+from ...errors import EventNotFoundError
 
 class WorldEventsManager:
     def __init__(self) -> None:
-        pass
+        self._observers = {}
 
-    def add_event_listener(event_type: str, notify: Callable[[WorldEvent], Any]) -> None:
-        pass
+    def add_event_listener(self, event_type: str, notify: Callable[[WorldEvent], Any]) -> None:
+        if event_type not in self._observers:
+            self._observers[event_type] = []
+        self._observers[event_type].append(notify)
 
-    def send(event_type: str, event: WorldEvent) -> None:
-        pass
+    def send(self, event_type: str, event: WorldEvent) -> None:
+        if event_type not in self._observers:
+            raise EventNotFoundError(event_type)
+        for notify in self._observers[event_type]:
+            notify(event)

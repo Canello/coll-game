@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
 @dataclass
-class Force:
+class Coordinate:
     x: float
     y: float
