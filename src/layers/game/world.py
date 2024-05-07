@@ -3,7 +3,7 @@ from typing import Any, Callable
 from .world_events_manager import WorldEventsManager
 from .collision_handler import CollisionHandler
 from .world_event import WorldEvent
-from .objects.object import Object
+from .objects.world_object import WorldObject
 from .objects.player import Player
 
 class World:
@@ -29,7 +29,7 @@ class World:
         for object in self._objects:
             object.move()
     
-    def add_object(self, object: Object) -> None:
+    def add_object(self, object: WorldObject) -> None:
         self._objects.append(object)
 
     def add_event_listener(self, event_type: str, notify: Callable[[WorldEvent], Any]) -> None:

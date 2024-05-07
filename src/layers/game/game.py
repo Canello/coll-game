@@ -1,4 +1,3 @@
-from ..client.input_event import InputEvent
 from .scoreboard import Scoreboard
 from .world_builder import WorldBuilder
 
@@ -15,5 +14,6 @@ class Game:
     def start(self) -> None:
         pass
 
-    def notify(self, event: InputEvent) -> None:
+    def notify(self, char: str) -> None:
+        # receives keypress events
         pass

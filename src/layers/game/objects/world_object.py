@@ -1,7 +1,7 @@
 from ..force import Force
 from ..collision_strategy import CollisionStrategy
 
-class Object:
+class WorldObject:
     def __init__(
         self,
         x: int = 0,
