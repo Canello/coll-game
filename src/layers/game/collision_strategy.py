@@ -60,6 +60,8 @@ class WallCollisionStrategy(CollisionStrategy):
             obj.x = self._owner.left - obj.width
         else:
             obj.x = self._owner.right
+        obj.sx = 0
+        obj.ax = 0
 
     def _move_outwards_to_closest_y_border(self, obj: WorldObject) -> None:
         distance_to_top_border = abs(obj.center.y - self._owner.top)
@@ -68,6 +70,8 @@ class WallCollisionStrategy(CollisionStrategy):
             obj.y = self._owner.top - obj.height
         else:
             obj.y = self._owner.bottom
+        obj.sy = 0
+        obj.ay = 0
 
 class GhostCollisionStrategy(CommonCollisionStrategy):
     def __init__(self, owner: WorldObject) -> None:

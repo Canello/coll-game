@@ -56,9 +56,12 @@ class WorldObject:
 
     def move(self) -> None:
         net_force = self._get_net_force()
-        self.ax = self.ax + net_force / self.mass
-        self.vx = self.vx + self.ax * Physics.DT
-        self.x = self.x + self.vx * Physics.DT
+        self.ax = self.ax + net_force.x / self.mass
+        self.sx = self.sx + self.ax * Physics.DT
+        self.x = self.x + self.sx * Physics.DT
+        self.ay = self.ay + net_force.y / self.mass
+        self.sy = self.sy + self.ay * Physics.DT
+        self.y = self.y + self.sy * Physics.DT
 
     def add_external_force(self, force: Force) -> None:
         self.external_forces.append(force)
