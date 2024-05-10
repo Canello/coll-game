@@ -1,3 +1,5 @@
+import threading
+
 from .scoreboard import Scoreboard
 from .world_builder import WorldBuilder
 
@@ -12,8 +14,12 @@ class Game:
         self._world.add_event_listener("score", self._scoreboard.notify)
 
     def start(self) -> None:
-        pass
+        game_thread = threading.Thread(target=self._game_loop)
+        game_thread.start()
+    
+    def _game_loop(self) -> None:
+        while True:
+            self._world.tick()
 
     def notify(self, char: str) -> None:
-        # receives keypress events
-        pass
+        self._world.apply_input(char)
