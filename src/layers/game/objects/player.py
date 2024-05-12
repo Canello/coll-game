@@ -1,4 +1,5 @@
 from .world_object import WorldObject
+from ..physics import Physics
 from ..collision_strategy import CommonCollisionStrategy
 
 class Player(WorldObject):
@@ -16,8 +17,3 @@ class Player(WorldObject):
     ) -> None:
         super().__init__(width, height, x, y, sx, sy, ax, ay, mass)
         self.collision_strategy = CommonCollisionStrategy()
-
-    def move() -> None:
-        # implement this
-        # gravity should be applied
-        pass

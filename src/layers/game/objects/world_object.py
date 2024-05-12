@@ -55,6 +55,7 @@ class WorldObject:
         pass
 
     def move(self) -> None:
+        self._add_gravity()
         net_force = self._get_net_force()
         self.ax = self.ax + net_force.x / self.mass
         self.sx = self.sx + self.ax * Physics.DT
@@ -68,6 +69,10 @@ class WorldObject:
 
     def reset_external_forces(self) -> None:
         self.external_forces = []
+
+    def _add_gravity(self) -> None:
+        gravity = Force(0, Physics.GRAVITY)
+        self.add_external_force(gravity)
 
     def _get_net_force(self) -> Force:
         fx = 0
