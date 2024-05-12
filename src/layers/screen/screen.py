@@ -40,3 +40,7 @@ class Screen:
         self._canvas.pack()
         gui_setup_event.set()
         self._window.mainloop()
+
+if __name__ == "__main__":
+    s = Screen()
+    s.listen_to_keypress(lambda event: print(event.char))

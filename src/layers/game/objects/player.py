@@ -18,5 +18,6 @@ class Player(WorldObject):
         self.collision_strategy = CommonCollisionStrategy()
 
     def move() -> None:
+        # implement this
         # gravity should be applied
         pass
