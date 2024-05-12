@@ -31,8 +31,8 @@ class World:
         # TODO
         # this probably will have some weird behaviour
         # as this is being called from another thread, two things might happen:
-        # 1 - forces will be added multiple times before resetting, then, it will be much stronger than it should
-        # 2 - forces will be added once every many ticks, so it will be intermittent
+        # 1 - force will be added multiple times before resetting, then, it will be much stronger than it should
+        # 2 - force will be added once every many ticks, so it will be intermittent
         self._input_handler.handle(char, self.player)
 
     def tick(self) -> None:
