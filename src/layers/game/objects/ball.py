@@ -16,7 +16,3 @@ class Ball(WorldObject):
     ) -> None:
         super().__init__(width, height, x, y, sx, sy, ax, ay, mass)
         self.collision_strategy = CommonCollisionStrategy()
-
-    def move() -> None:
-        # gravity should be applied
-        pass

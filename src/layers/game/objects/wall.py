@@ -18,5 +18,4 @@ class Wall(WorldObject):
         self.collision_strategy = WallCollisionStrategy()
 
     def move() -> None:
-        # wall should not move
-        pass
+        return # should not move

@@ -18,5 +18,4 @@ class Goal(WorldObject):
         self.collision_strategy = GhostCollisionStrategy()
 
     def move() -> None:
-        # goal should not move
-        pass
+        return # should not move
