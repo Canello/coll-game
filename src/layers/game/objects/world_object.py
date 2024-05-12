@@ -2,6 +2,7 @@ from ..force import Force
 from ..physics import Physics
 from ..collision_strategy import CollisionStrategy
 from ..coordinate import Coordinate
+from ...screen.screen import Screen
 
 class WorldObject:
     def __init__(
@@ -52,7 +53,7 @@ class WorldObject:
         return self.x + self.width
 
     def draw(self) -> None:
-        pass
+        Screen().draw_rect(self.x, self.y, self.width, self.height)
 
     def move(self) -> None:
         self._add_gravity()
