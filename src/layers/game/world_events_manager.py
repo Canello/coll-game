@@ -5,7 +5,7 @@ from ...errors import EventNotFoundError
 
 class WorldEventsManager:
     def __init__(self) -> None:
-        self._observers: dict[str, Callable[[WorldEvent], Any]] = dict()
+        self._observers: dict[str, list[Callable[[WorldEvent], Any]]] = dict()
 
     def add_event_listener(self, event_type: str, notify: Callable[[WorldEvent], Any]) -> None:
         if event_type not in self._observers:
