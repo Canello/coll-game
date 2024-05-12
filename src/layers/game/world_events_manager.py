@@ -1,7 +1,7 @@
 from typing import Any, Callable
 
 from .world_event import WorldEvent
-from ...errors import EventNotFoundError
+from ..utils.errors import EventNotFoundError
 
 class WorldEventsManager:
     def __init__(self) -> None:
