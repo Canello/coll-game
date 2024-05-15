@@ -6,6 +6,7 @@ from .world_event import WorldEvent
 from .objects.world_object import WorldObject
 from .objects.player import Player
 from .input_handler import InputHandler
+from ..screen.screen import Screen
 
 class World:
     def __init__(
@@ -39,6 +40,7 @@ class World:
         self._handle_collisions()
         self._apply_movements()
         self._reset_forces()
+        self._draw()
 
     def _handle_collisions(self) -> None:
         self._collision_handler.handle(self._objects, self._world_events_manager.send)
@@ -50,3 +52,8 @@ class World:
     def _reset_forces(self) -> None:
         for obj in self._objects:
             obj.reset_external_forces()
+
+    def _draw(self) -> None:
+        Screen().clear()
+        for obj in self._objects:
+            obj.draw()

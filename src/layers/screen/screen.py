@@ -41,6 +41,8 @@ class Screen:
         gui_setup_event.set()
         self._window.mainloop()
 
+# TODO
+# delete lines below
 if __name__ == "__main__":
     s = Screen()
     s.listen_to_keypress(lambda event: print(event.char))
