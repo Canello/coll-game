@@ -1,5 +1,4 @@
 from .world import World
-from .game_factory import GameFactory
 from .objects.player import Player
 from .objects.ball import Ball
 from .objects.wall import Wall
@@ -10,6 +9,8 @@ class WorldBuilder:
         pass
 
     def build(self) -> World:
+        from .game_factory import GameFactory # importing here to avoid circular import between GameFactory and WorldBuilder
+
         # create objects and set their positions
         player = Player()
         objects = [
