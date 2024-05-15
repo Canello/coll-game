@@ -17,5 +17,5 @@ class Wall(WorldObject):
         super().__init__(width, height, x, y, sx, sy, ax, ay, mass)
         self.collision_strategy = WallCollisionStrategy(self)
 
-    def move() -> None:
+    def move(self) -> None:
         return # should not move

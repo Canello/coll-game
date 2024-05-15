@@ -9,7 +9,7 @@ class App:
         game = GameFactory.make_game()
         screen = Screen()
         screen.listen_to_keypress(client.notify)
-        client.add_event_listener("input", game.notify)
+        client.add_event_listener(game.notify)
         game.start()
 
 if __name__ == "__main__":
