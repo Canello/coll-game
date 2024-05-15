@@ -1,8 +1,10 @@
-from typing import Any, Callable
+from __future__ import annotations
+from typing import Any, Callable, TYPE_CHECKING
 
-from .objects.world_object import WorldObject
 from .physics import Physics
 from .force import Force
+if TYPE_CHECKING: # avoid circular import bacause of type annotation
+    from .objects.world_object import WorldObject
 
 class CollisionStrategy:
     def __init__(self, owner: WorldObject) -> None:
