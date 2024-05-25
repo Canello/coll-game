@@ -12,7 +12,7 @@ class WorldBuilder:
         from .game_factory import GameFactory # importing here to avoid circular import between GameFactory and WorldBuilder
 
         # create objects and set their positions
-        player = Player(x=10, y=10)
+        player = Player(x=10, y=10, width=50, height=10)
         objects = [
             Wall(x=40, y=160, width=80, height=80),
         ]

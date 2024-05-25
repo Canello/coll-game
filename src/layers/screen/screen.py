@@ -2,6 +2,8 @@ import tkinter as tk
 import threading
 from typing import Any, Callable
 
+# TODO
+# canvas is blinking probably because of threading, need to fix that
 class Screen:
     _instance = None
     _has_been_instantiated = False

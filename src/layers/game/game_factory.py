@@ -23,5 +23,4 @@ class GameFactory:
         world_events_manager = WorldEventsManager()
         collision_handler = CollisionHandler()
         input_handler = InputHandler()
-        player = Player()
         return World(world_events_manager, collision_handler, input_handler, player)

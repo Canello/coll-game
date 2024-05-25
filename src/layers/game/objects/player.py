@@ -1,5 +1,4 @@
 from .world_object import WorldObject
-from ..physics import Physics
 from ..collision_strategy import CommonCollisionStrategy
 
 class Player(WorldObject):
