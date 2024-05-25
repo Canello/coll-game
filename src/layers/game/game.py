@@ -15,6 +15,7 @@ class Game:
 
     def start(self) -> None:
         game_thread = threading.Thread(target=self._game_loop)
+        game_thread.daemon = True
         game_thread.start()
     
     def _game_loop(self) -> None:
